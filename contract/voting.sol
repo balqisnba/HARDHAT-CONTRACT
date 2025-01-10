@@ -1,1 +1,5 @@
 //Stigmaaa
+contract {
+    
+}
+
