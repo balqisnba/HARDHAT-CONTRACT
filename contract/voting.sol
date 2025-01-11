@@ -1,5 +1,0 @@
-//Stigmaaa
-contract {
-    
-}
-
