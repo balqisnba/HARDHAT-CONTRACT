@@ -34,6 +34,42 @@ const Admin = () => {
         }
     };
 
+    const startVoting = async () => {
+        try {
+            const web3 = new Web3(window.ethereum);
+            const accounts = await web3.eth.requestAccounts();
+            const contract = new web3.eth.Contract(contractABI, CONTRACT_ADDRESS);
+
+            if (accounts[0].toLowerCase() !== ADMIN_ADDRESS.toLowerCase()) {
+                setMessage("Only the admin can start voting.");
+                return;
+            }
+
+            await contract.methods.startVoting().send({ from: accounts[0] });
+            setMessage("Voting started!");
+        } catch (error) {
+            setMessage(`Error: ${error.message}`);
+        }
+    };
+
+    const endVoting = async () => {
+        try {
+            const web3 = new Web3(window.ethereum);
+            const accounts = await web3.eth.requestAccounts();
+            const contract = new web3.eth.Contract(contractABI, CONTRACT_ADDRESS);
+
+            if (accounts[0].toLowerCase() !== ADMIN_ADDRESS.toLowerCase()) {
+                setMessage("Only the admin can end voting.");
+                return;
+            }
+
+            await contract.methods.endVoting().send({ from: accounts[0] });
+            setMessage("Voting ended!");
+        } catch (error) {
+            setMessage(`Error: ${error.message}`);
+        }
+    };
+
     return (
         <div>
             <h2>Admin Panel</h2>
@@ -50,6 +86,8 @@ const Admin = () => {
                 onChange={(e) => setParty(e.target.value)}
             />
             <button onClick={registerCandidate}>Register Candidate</button>
+            <button onClick={startVoting}>Start Voting</button>
+            <button onClick={endVoting}>End Voting</button>
             <p>{message}</p>
         </div>
     );
