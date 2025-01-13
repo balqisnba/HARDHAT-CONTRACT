@@ -85,3 +85,11 @@ body {
 .btn-primary:hover {
     background: #5483b3;
 }
+
+.container {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space between buttons */
+    align-items: center; /* Center buttons vertically */
+    width: 100%; /* Full width of the parent container */
+    padding: 10px; /* Optional padding for the container */
+}

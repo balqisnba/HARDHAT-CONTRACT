@@ -7,9 +7,16 @@ function App() {
 
   return (
     <div className="container">
-      <Button onClick={() => navigate("/register")}>Register</Button>
-      <Button onClick={() => navigate("/login")}>Login</Button>
-      <Button onClick={() => navigate("/vote")}>Vote</Button>
+      <Button
+        text="Register"
+        onClick={() => navigate("/register")}
+        className="btn-primary"
+      />
+      <Button
+        text="Login"
+        onClick={() => navigate("/login")}
+        className="btn-primary"
+      />
     </div>
   );
 }
