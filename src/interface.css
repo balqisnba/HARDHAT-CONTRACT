@@ -93,3 +93,13 @@ body {
     width: 100%; /* Full width of the parent container */
     padding: 10px; /* Optional padding for the container */
 }
+
+.metamask-connect {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #5483b3;
+    color: #c1e8ff;
+    font-size: 1rem;
+}
