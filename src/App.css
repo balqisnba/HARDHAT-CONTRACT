@@ -1,16 +1,12 @@
-/* Centers the buttons in the middle of the page */
+ Centers the buttons in the middle of the page
 .container {
   display: flex;
-  flex-direction: column; /* Stack buttons vertically */
+  flex-direction: column; /* Stack buttons vertically 
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
   height: 100vh; /* Full viewport height */
   background-color: #f9f9f9; /* Light background */
   gap: 20px; /* Space between buttons */
-}
-
-/* Style for the buttons */
-.custom-btn {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -23,4 +19,4 @@
 
 .custom-btn:hover {
   background-color: #0056b3; /* Darker blue on hover */
-}
+} 
