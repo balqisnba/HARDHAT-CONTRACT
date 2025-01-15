@@ -87,9 +87,257 @@ body {
 }
 
 .container {
-    display: flex; /* Use flexbox layout */
-    justify-content: space-between; /* Space between buttons */
-    align-items: center; /* Center buttons vertically */
-    width: 100%; /* Full width of the parent container */
-    padding: 10px; /* Optional padding for the container */
+    display: flex;
+    /* Use flexbox layout */
+    justify-content: space-between;
+    /* Space between buttons */
+    align-items: center;
+    /* Center buttons vertically */
+    width: 100%;
+    /* Full width of the parent container */
+    padding: 10px;
+    /* Optional padding for the container */
+}
+
+/* General container styles */
+.homepage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1a2a6c, #3e5c87);
+    /* Soft gradient background */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    /* Modern font */
+    text-align: center;
+    backdrop-filter: blur(10px);
+    /* Matte effect */
+}
+
+/* Heading styles for homepage */
+.homepage-container .heading-container {
+    margin-bottom: 30px;
+}
+
+.homepage-container .main-title {
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Light text shadow */
+    margin-bottom: 10px;
+}
+
+.homepage-container .sub-title {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* Button Container */
+.homepage-container .button-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Button Styles */
+.homepage-container .btn-register,
+.homepage-container .btn-login {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    width: 180px;
+    /* Fixed width for buttons */
+}
+
+/* Register Button */
+.homepage-container .btn-register {
+    background: #28a745;
+    /* Green color for register */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Soft shadow */
+}
+
+.homepage-container .btn-register:hover {
+    background: #218838;
+    /* Darker green for hover */
+    transform: translateY(-4px);
+    /* Lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow */
+}
+
+.homepage-container .btn-register:active {
+    transform: translateY(2px);
+    /* Subtle click effect */
+}
+
+/* Login Button */
+.homepage-container .btn-login {
+    background: #007bff;
+    /* Blue color for login */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Soft shadow */
+}
+
+.homepage-container .btn-login:hover {
+    background: #0056b3;
+    /* Darker blue for hover */
+    transform: translateY(-4px);
+    /* Lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow */
+}
+
+.homepage-container .btn-login:active {
+    transform: translateY(2px);
+    /* Subtle click effect */
+}
+
+/* Additional styling for the overall layout */
+.homepage-container .btn-register,
+.homepage-container .btn-login {
+    font-size: 1.2rem;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Enhance Button Hover Effect */
+.homepage-container .btn-register:hover,
+.homepage-container .btn-login:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Original background */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* Title style for "Welcome to login page..." */
+.login-form {
+    width: 400px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    /* Subtle shadow to elevate the form */
+    max-width: 450px;
+    width: 100%;
+}
+
+.login-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+}
+
+/* The 3D-ish card box */
+.login-card {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Large button to connect Metamask */
+.button-large {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f6851b, #ffb84d);
+    /* Shiny gradient button */
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Hover effect on the button */
+.button-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.button-large:active {
+    transform: translateY(2px);
+}
+
+/* Metamask icon styling within the button */
+.metamask-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Account details when connected */
+.account-details {
+    margin-top: 20px;
+}
+
+.account-details h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Light shadow for shiny text */
+}
+
+.account-details p {
+    font-size: 1rem;
+}
+
+.account-details h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Register link style */
+
+.register-link {
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+.register-link a {
+    color: #ffb84d;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+    color: #f6851b;
+    /* Darker yellow on hover */
 }
