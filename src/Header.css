@@ -1,0 +1,48 @@
+/* Header Container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #2b2c68, #338aca);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo h1 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Navigation Links */
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+  color: #c8f904;
+  /* Lime green hover effect */
+}
+
+/* Active Link Styling */
+.nav-links ul li .active {
+  color: #c8f904;
+  /* Highlight active link */
+  font-weight: bold;
+}
