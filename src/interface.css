@@ -341,3 +341,14 @@ body {
     color: #f6851b;
     /* Darker yellow on hover */
 }
+
+.metamask-connect {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #5483b3;
+    color: #c1e8ff;
+    font-size: 1rem;
+
+}
