@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import RegisterCandidates from "./RegisterCandidates";  // Import RegisterCandidates
-import './interface.css';  // Assuming you're using the same CSS file for styling
+import '../interface.css';  // Assuming you're using the same CSS file for styling
 
 const AdminPage = () => {
     return (
