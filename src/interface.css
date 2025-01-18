@@ -402,3 +402,56 @@ body {
     font-size: 1rem;
 
 }
+
+/* Admin Page Styles */
+.admin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+    /* Light background */
+}
+
+.admin-buttons {
+    display: flex;
+    justify-content: space-around;
+    /* Space out the buttons */
+    width: 60%;
+}
+
+.admin-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 2px solid #052659;
+    background-color: transparent;
+    color: #052659;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 200px;
+    text-align: center;
+}
+
+.admin-button:hover {
+    background-color: #08d3f2;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.admin-button:active {
+    transform: translateY(1px);
+}
+
+.register-button {
+    background-color: #61bdaf;
+}
+
+.start-voting-button {
+    background-color: #338aca;
+}
+
+.end-voting-button {
+    background-color: #dfdeff;
+}

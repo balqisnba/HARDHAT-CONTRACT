@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import Web3 from "web3";
-import metamaskIcon from '../assets/MetaMask_Fox.png';
+import metamaskIcon from "../assets/MetaMask_Fox.png";
+import { useNavigate } from "react-router-dom";  // Import useNavigate
 import "../interface.css";
+
+// Predefined admin wallet address
+const ADMIN_ADDRESS = "0xe9D190c1869628664a6a0a8Eb2CC1D98FdE26955";
 
 const Login: React.FC = () => {
   const [metaMaskAccount, setMetaMaskAccount] = useState<string | null>(null);
+  const navigate = useNavigate();  // Hook for navigation
 
   const connectMetaMask = async () => {
     if (window.ethereum) {
@@ -15,6 +20,14 @@ const Login: React.FC = () => {
         });
         setMetaMaskAccount(accounts[0]);
         console.log("Connected MetaMask account:", accounts[0]);
+
+        // Check if the connected account is the admin
+        if (accounts[0].toLowerCase() === ADMIN_ADDRESS.toLowerCase()) {
+          console.log("Admin logged in. Redirecting to Admin Page...");
+          navigate("/admin");  // Redirect to admin page
+        } else {
+          console.log("Non-admin logged in.");
+        }
 
         // Example: Use web3Instance for further blockchain interactions
         console.log("web3Instance initialized:", web3Instance);
