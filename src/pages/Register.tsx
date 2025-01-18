@@ -9,34 +9,41 @@ const Register: React.FC = () => {
   const [name, setName] = useState("");
   const [nationalId, setNationalId] = useState("");
   const [accounts, setAccounts] = useState<string[]>([]);
+
   // Function to handle the registration process
   const handleRegister = () => {
     console.log("User Registration Data:", {
       name,
       nationalId,
     });
+    // Add the wallet address to localStorage
+    if (accounts.length > 0) {
+      localStorage.setItem("walletAddress", accounts[0]);  // Store the wallet address
+    }
     // Add your backend or blockchain integration logic here
   };
 
-  //Function to connect to MetaMask
+  // Function to connect to MetaMask
   const connectWallet = async () => {
-    //Check is Metamask extension is installed
-    if (window.ethereum.isMetaMask) {
-      //initialize web3
-      const web3Instance = new Web3(window.ethereum);
-      const accounts = await web3Instance.eth.requestAccounts();
-      setAccounts(accounts);
+    if (window.ethereum) {
+      if (window.ethereum.isMetaMask) {
+        const web3Instance = new Web3(window.ethereum);
+        const accounts = await web3Instance.eth.requestAccounts();
+        setAccounts(accounts);
+      }
+    } else {
+      alert("Please install MetaMask to connect.");
     }
   };
+
   return (
     <div className="register-container">
       <div className="register-card">
         <h1>Register</h1>
         <p>Fill in the details to create your account</p>
 
-        {/*Ask user for their name*/}
         <form onSubmit={(e) => e.preventDefault()}>
-          {/* Reorganized Input Components */}
+          {/* Name Input */}
           <div className="form-group">
             <label className="form-label">Name</label>
             <InputField
@@ -48,10 +55,10 @@ const Register: React.FC = () => {
             />
           </div>
 
-          {/*Connect to user using MetaMask Account*/}
+          {/* MetaMask Wallet Connection */}
           <div className="form-group">
             <label className="form-label">MetaMask Wallet</label>
-            {accounts && accounts.length > 0 && (
+            {accounts.length > 0 && (
               <div>
                 <h2>Account details:</h2>
                 <h2>Address: {accounts[0]} </h2>
@@ -66,7 +73,7 @@ const Register: React.FC = () => {
             )}
           </div>
 
-          {/*Ask user to enter their National ID*/}
+          {/* National ID Input */}
           <div className="form-group">
             <label className="form-label">National ID</label>
             <InputField
@@ -77,12 +84,8 @@ const Register: React.FC = () => {
               onChange={(e) => setNationalId(e.target.value)}
             />
           </div>
-          {/* Register Button */}
-          <Button
-            text="Register"
-            onClick={handleRegister}
-            className="btn-primary"
-          />
+
+          <Button text="Register" onClick={handleRegister} className="btn-primary" />
         </form>
       </div>
     </div>
