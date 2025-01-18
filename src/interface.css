@@ -4,11 +4,26 @@ body {
     margin: 0;
     font-family: 'Eleven Eleven Sans Serif', Arial, sans-serif;
     /* Replace with the font family you liked */
-    background: linear-gradient(to bottom, #021024, #052659, #5483b3, #7da0ca, #c1e8ff);
+    background: linear-gradient(to bottom, #2b2c68, #338aca,#5483b3, #26b7cd, #61bdaf);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+/* Navigation Link Styles */
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Active Link Styles */
+.nav-links a.active {
+    color: #c8f904;
+    /* Lime green for active links */
+    font-weight: bold;
 }
 
 .register-container {
@@ -99,78 +114,113 @@ body {
     /* Optional padding for the container */
 }
 
-/* General container styles */
 .homepage-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.homepage-container .content-container {
+    display: flex;
+    /* Aligns children (image and text) in a row */
+    flex-direction: row;
+    /* Makes the layout horizontal */
+    align-items: center;
+    /* Centers content vertically */
+    justify-content: space-between;
+    /* Centers content horizontally */
+    width: 100%;
+    overflow: hidden;
+}
+
+.homepage-container .image-container {
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #1a2a6c, #3e5c87);
-    /* Soft gradient background */
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    /* Modern font */
-    text-align: center;
-    backdrop-filter: blur(10px);
-    /* Matte effect */
 }
 
-/* Heading styles for homepage */
+.homepage-container .left-image {
+    width: 80%;
+    height: auto;
+}
+
+/* Right Text and Buttons Section */
+.homepage-container .text-button-container {
+    width: 50%;
+    /* Take up half the width */
+    text-align: center;
+    /* Center-align text content */
+}
+
 .homepage-container .heading-container {
     margin-bottom: 30px;
 }
 
 .homepage-container .main-title {
-    font-size: 3rem;
-    font-weight: 600;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 3rem; /* title size */
+    font-weight: 700; /* bold */
+    color: #edfaf8; /* Text color */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     /* Light text shadow */
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Space below the title */
 }
 
 .homepage-container .sub-title {
     font-size: 1.2rem;
     font-weight: 400;
-    opacity: 0.8;
+    color: #ffffff; /* Text color */
+    opacity: 0.7;
+    margin-bottom: 30px;
 }
 
 /* Button Container */
 .homepage-container .button-container {
     display: flex;
-    gap: 20px;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 /* Button Styles */
 .homepage-container .btn-register,
 .homepage-container .btn-login {
-    padding: 15px 40px;
-    font-size: 1.2rem;
+    padding: 18px 45px;
+    font-size: 1.3rem;
     font-weight: bold;
-    border-radius: 50px;
+    border-radius: 8px;
     cursor: pointer;
     border: none;
     transition: all 0.3s ease;
-    width: 180px;
-    /* Fixed width for buttons */
+    width: 200px;
+    /* Button width */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid #052659;
+    background-color: transparent;
+    color: #052659;
 }
 
 /* Register Button */
 .homepage-container .btn-register {
-    background: #28a745;
-    /* Green color for register */
-    color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    /* Soft shadow */
+    background: #dfdeff;
+    /* Use the purple color */
+    color: #052659;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    /* Soft glow effect */
 }
 
 .homepage-container .btn-register:hover {
-    background: #218838;
-    /* Darker green for hover */
+    background: #08d3f2;
+    /* On hover, use lime green */
     transform: translateY(-4px);
     /* Lift effect */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    /* Stronger shadow */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow on hover */
 }
 
 .homepage-container .btn-register:active {
@@ -180,20 +230,20 @@ body {
 
 /* Login Button */
 .homepage-container .btn-login {
-    background: #007bff;
-    /* Blue color for login */
-    color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    /* Soft shadow */
+    background: #dfdeff;
+    /* Dark blue for login */
+    color: #052659;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    /* Soft glow effect */
 }
 
 .homepage-container .btn-login:hover {
-    background: #0056b3;
-    /* Darker blue for hover */
+    background: #08d3f2;
+    /* On hover, use lime green */
     transform: translateY(-4px);
     /* Lift effect */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    /* Stronger shadow */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow on hover */
 }
 
 .homepage-container .btn-login:active {
@@ -204,8 +254,8 @@ body {
 /* Additional styling for the overall layout */
 .homepage-container .btn-register,
 .homepage-container .btn-login {
-    font-size: 1.2rem;
-    padding: 16px 32px;
+    font-size: 1.3rem;
+    padding: 16px 35px;
     border-radius: 50px;
     text-transform: uppercase;
     font-weight: 600;
@@ -216,7 +266,7 @@ body {
 .homepage-container .btn-register:hover,
 .homepage-container .btn-login:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Login container */
