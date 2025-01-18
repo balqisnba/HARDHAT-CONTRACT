@@ -1,25 +1,31 @@
 /* Header Container */
 .header {
+  position: fixed;
+  /* Fix the navbar at the top */
+  top: 0;
+  width: 100%;
+  /* Full width */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, #2b2c68, #338aca);
+  background-color: #2b2c68;
+  /* Dark background */
   padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+  /* Add some padding */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  /* Ensure it stays on top of other content */
 }
 
 /* Logo */
 .logo h1 {
   color: #ffffff;
   font-size: 1.5rem;
+  font-weight: bold;
   margin: 0;
 }
 
-/* Navigation Links */
+/* Navigation Links Container */
 .nav-links ul {
   display: flex;
   list-style: none;
@@ -28,21 +34,29 @@
   padding: 0;
 }
 
+/* Navigation Links */
 .nav-links ul li a {
   color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  padding: 8px 12px;
+  /* Add padding for clickable area */
+  border-radius: 4px;
+  /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Hover Effect */
 .nav-links ul li a:hover {
-  color: #c8f904;
-  /* Lime green hover effect */
+  color: #2b2c68;
+  /* Invert colors */
+  background-color: #c8f904;
+  /* Lime green background */
 }
 
 /* Active Link Styling */
 .nav-links ul li .active {
-  color: #c8f904;
-  /* Highlight active link */
+  color: #2b2c68;
+  background-color: #c8f904;
   font-weight: bold;
 }
