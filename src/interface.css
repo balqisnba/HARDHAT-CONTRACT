@@ -114,6 +114,16 @@ body {
     /* Optional padding for the container */
 }
 
+.homepage-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
 .homepage-container .content-container {
     display: flex;
     /* Aligns children (image and text) in a row */
@@ -121,17 +131,14 @@ body {
     /* Makes the layout horizontal */
     align-items: center;
     /* Centers content vertically */
-    justify-content: center;
+    justify-content: space-between;
     /* Centers content horizontally */
-    border-radius: 10px;
-    /* Adds rounded corners to the container */
+    width: 100%;
     overflow: hidden;
-    /* Ensures content doesn't overflow outside */
 }
 
 .homepage-container .image-container {
-    width: 50%;
-    /* Yellowish background */
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,7 +164,7 @@ body {
 .homepage-container .main-title {
     font-size: 3rem; /* title size */
     font-weight: 700; /* bold */
-    color: #61bdaf; /* Text color */
+    color: #edfaf8; /* Text color */
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     /* Light text shadow */
     margin-bottom: 10px; /* Space below the title */
@@ -193,6 +200,9 @@ body {
     /* Button width */
     text-transform: uppercase;
     letter-spacing: 1px;
+    border: 2px solid #052659;
+    background-color: transparent;
+    color: #052659;
 }
 
 /* Register Button */
